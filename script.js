@@ -48,7 +48,7 @@ tabs.forEach(tab => {
 
 // ---- Scroll reveal (Intersection Observer) ----
 const revealEls = document.querySelectorAll(
-  '.menu-card, .feature-card, .review-card, .about-grid, .contact-grid, .badge'
+  '.menu-card, .feature-card, .review-card, .about-grid, .contact-grid'
 );
 
 const observer = new IntersectionObserver((entries) => {

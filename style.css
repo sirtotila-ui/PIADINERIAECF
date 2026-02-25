@@ -381,42 +381,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ===========================
-   BADGE BAR — testi in scroll continuo
-=========================== */
-.badge-bar {
-  background: var(--red-dark);
-  padding: 18px max(20px, env(safe-area-inset-right)) 18px max(20px, env(safe-area-inset-left));
-  overflow: hidden;
-}
-
-.badge-track {
-  display: flex;
-  gap: 0;
-  width: max-content;
-  animation: badge-scroll 25s linear infinite;
-}
-
-.badge-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes badge-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.badge {
-  flex: 0 0 auto;
-  color: var(--white);
-  font-size: .85rem;
-  font-weight: 500;
-  padding: 6px 20px;
-  border-right: 1px solid var(--border-gold);
-  white-space: nowrap;
-}
-.badge:last-child { border-right: none; }
-
-/* ===========================
    TABS
 =========================== */
 .tabs {
