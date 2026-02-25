@@ -1,28 +1,30 @@
 /* ============================================================
    ECF PIADINERIA — Mobile-First CSS
-   Palette: Verde #2d6a4f | Bianco #ffffff | Accenti vari
+   Palette: Rosso scuro | Oro | Bianco — elegante e premium
    ============================================================ */
 
 /* ---- RESET & BASE ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --green-dark:   #1b4332;
-  --green-main:   #2d6a4f;
-  --green-mid:    #40916c;
-  --green-light:  #74c69d;
-  --green-pale:   #d8f3dc;
-  --green-bg:     #f0faf4;
+  --red-dark:     #3d0a0a;
+  --red-main:     #5c1010;
+  --red-mid:      #7a1515;
+  --red-light:    #9a2020;
+  --red-pale:     #e8d4d4;
+  --red-bg:       #faf5f5;
   --white:        #ffffff;
-  --off-white:    #fafaf8;
-  --text-dark:    #1a2e20;
-  --text-mid:     #3d5a47;
-  --text-light:   #6b8f76;
-  --gold:         #c9a84c;
-  --gold-light:   #f5e6b8;
+  --off-white:    #faf9f7;
+  --text-dark:    #1a0a0a;
+  --text-mid:     #2d1515;
+  --text-light:   #5c3d3d;
+  --gold:         #c9a227;
+  --gold-dark:    #b8921f;
+  --gold-light:   #e8d5a3;
+  --gold-pale:    #f5efdc;
 
-  --font-serif:   'Playfair Display', Georgia, serif;
-  --font-sans:    'Inter', system-ui, sans-serif;
+  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Source Serif 4', Georgia, serif;
 
   --radius-sm:    8px;
   --radius-md:    16px;
@@ -30,9 +32,13 @@
   --radius-xl:    32px;
   --radius-full:  9999px;
 
-  --shadow-sm:    0 1px 4px rgba(0,0,0,.08);
-  --shadow-md:    0 4px 16px rgba(0,0,0,.10);
-  --shadow-lg:    0 8px 32px rgba(0,0,0,.12);
+  --shadow-sm:    0 1px 4px rgba(61,10,10,.08);
+  --shadow-md:    0 4px 16px rgba(61,10,10,.12);
+  --shadow-lg:    0 8px 32px rgba(61,10,10,.15);
+  --shadow-gold:  0 2px 12px rgba(201,162,39,.2);
+
+  --border-red:   rgba(92,16,16,.15);
+  --border-gold:  rgba(201,162,39,.35);
 
   --transition:   .25s ease;
 }
@@ -75,15 +81,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     padding: 48px 0;
   }
 }
-.section--green  { background: var(--green-main); }
-.section--light  { background: var(--green-bg); }
+.section--green  { background: var(--red-main); }
+.section--light  { background: var(--red-bg); }
 
 .hidden { display: none !important; }
 
 /* ---- BUTTONS ---- */
 .btn-primary {
   display: inline-block;
-  background: var(--green-main);
+  background: var(--red-main);
   color: var(--white);
   font-weight: 600;
   font-size: .95rem;
@@ -92,15 +98,34 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 .btn-primary:hover {
-  background: var(--green-dark);
+  background: var(--red-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
+/* Hero CTA on dark background */
+.hero-cta .btn-primary {
+  background: var(--gold);
+  color: var(--red-dark);
+}
+.hero-cta .btn-primary:hover {
+  background: var(--gold-dark);
+  color: var(--red-dark);
+  box-shadow: var(--shadow-gold);
+}
+.hero-cta .btn-ghost {
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+.hero-cta .btn-ghost:hover {
+  background: rgba(201,162,39,.2);
+  color: var(--gold-light);
+}
+
 .btn-ghost {
   display: inline-block;
-  border: 2px solid var(--green-main);
-  color: var(--green-main);
+  border: 2px solid var(--red-main);
+  color: var(--red-main);
   font-weight: 600;
   font-size: .95rem;
   padding: 12px 26px;
@@ -108,7 +133,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: all var(--transition);
 }
 .btn-ghost:hover {
-  background: var(--green-main);
+  background: var(--red-main);
   color: var(--white);
   transform: translateY(-2px);
 }
@@ -116,7 +141,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .btn-white {
   display: inline-block;
   background: var(--white);
-  color: var(--green-dark);
+  color: var(--red-dark);
   font-weight: 700;
   font-size: .95rem;
   padding: 14px 28px;
@@ -125,15 +150,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-top: 8px;
 }
 .btn-white:hover {
-  background: var(--green-pale);
+  background: var(--gold-pale);
+  color: var(--red-dark);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-gold);
 }
 
 .btn-ghost-sm {
   display: inline-block;
-  border: 2px solid var(--green-main);
-  color: var(--green-main);
+  border: 2px solid var(--red-main);
+  color: var(--red-main);
   font-weight: 600;
   font-size: .85rem;
   padding: 8px 18px;
@@ -142,7 +168,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-top: 12px;
 }
 .btn-ghost-sm:hover {
-  background: var(--green-main);
+  background: var(--red-main);
   color: var(--white);
 }
 
@@ -158,10 +184,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 600;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--green-mid);
+  color: var(--red-mid);
   margin-bottom: 10px;
 }
-.section-eyebrow.light { color: var(--green-light); }
+.section-eyebrow.light { color: var(--gold); }
 
 .section-title {
   font-family: var(--font-serif);
@@ -187,7 +213,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: rgba(255,255,255,.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(45,106,79,.10);
+  border-bottom: 1px solid var(--border-red);
   transition: box-shadow var(--transition);
 }
 .navbar.scrolled { box-shadow: var(--shadow-md); }
@@ -204,12 +230,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   gap: 8px;
 }
-.logo-icon { font-size: 1.4rem; }
+.logo-icon {
+  font-size: 1.2rem;
+  color: var(--gold);
+  font-weight: 700;
+}
 .logo-text {
   font-family: var(--font-serif);
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--green-dark);
+  color: var(--red-dark);
 }
 
 /* Burger */
@@ -222,7 +252,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .burger span {
   display: block;
   width: 24px; height: 2px;
-  background: var(--green-dark);
+  background: var(--red-dark);
   border-radius: 2px;
   transition: transform var(--transition), opacity var(--transition);
 }
@@ -236,7 +266,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-direction: column;
   gap: 0;
   padding: 0 max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
-  border-top: 1px solid var(--green-pale);
+  border-top: 1px solid var(--red-pale);
 }
 .nav-menu.open { display: flex; }
 .nav-menu a {
@@ -246,15 +276,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   font-weight: 500;
   color: var(--text-dark);
-  border-bottom: 1px solid var(--green-pale);
+  border-bottom: 1px solid var(--red-pale);
   transition: color var(--transition);
 }
 .nav-menu a:last-child { border-bottom: none; }
-.nav-menu a:hover { color: var(--green-main); }
+.nav-menu a:hover { color: var(--red-main); }
 .btn-nav {
   margin-top: 12px;
   display: inline-block;
-  background: var(--green-main);
+  background: var(--red-main);
   color: var(--white) !important;
   border: none !important;
   padding: 12px 24px !important;
@@ -282,9 +312,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(160deg, rgba(240,250,244,.75) 0%, rgba(255,255,255,.85) 50%, rgba(232,245,233,.8) 100%),
-    radial-gradient(ellipse at 20% 80%, rgba(116,198,157,.2) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 20%, rgba(45,106,79,.12) 0%, transparent 55%),
+    linear-gradient(160deg, rgba(61,10,10,.92) 0%, rgba(92,16,16,.88) 50%, rgba(61,10,10,.9) 100%),
+    radial-gradient(ellipse at 30% 70%, rgba(201,162,39,.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 30%, rgba(255,255,255,.03) 0%, transparent 45%),
     url('images/hero-bg.png') center / cover no-repeat;
   z-index: 0;
 }
@@ -303,7 +333,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 600;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--green-mid);
+  color: var(--gold-light);
   margin-bottom: 16px;
 }
 
@@ -312,17 +342,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: clamp(3rem, 12vw, 6.5rem);
   font-weight: 700;
   line-height: 1.05;
-  color: var(--green-dark);
+  color: var(--white);
   margin-bottom: 20px;
 }
 .hero-title em {
   font-style: italic;
-  color: var(--green-mid);
+  color: var(--gold);
 }
 
 .hero-sub {
   font-size: clamp(.95rem, 2.5vw, 1.15rem);
-  color: var(--text-mid);
+  color: rgba(255,255,255,.9);
   margin-bottom: 32px;
   line-height: 1.7;
 }
@@ -340,10 +370,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  color: var(--green-mid);
+  color: var(--gold);
   font-size: 1.2rem;
   animation: bounce 2s infinite;
-  opacity: .7;
+  opacity: .85;
 }
 @keyframes bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -354,7 +384,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    BADGE BAR — testi in scroll continuo
 =========================== */
 .badge-bar {
-  background: var(--green-dark);
+  background: var(--red-dark);
   padding: 18px max(20px, env(safe-area-inset-right)) 18px max(20px, env(safe-area-inset-left));
   overflow: hidden;
 }
@@ -381,7 +411,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: .85rem;
   font-weight: 500;
   padding: 6px 20px;
-  border-right: 1px solid rgba(255,255,255,.15);
+  border-right: 1px solid var(--border-gold);
   white-space: nowrap;
 }
 .badge:last-child { border-right: none; }
@@ -404,7 +434,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-full);
-  border: 2px solid var(--green-pale);
+  border: 2px solid var(--red-pale);
   color: var(--text-mid);
   font-size: .9rem;
   font-weight: 500;
@@ -412,9 +442,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: var(--white);
 }
 .tab.active, .tab:hover {
-  background: var(--green-main);
-  border-color: var(--green-main);
-  color: var(--white);
+  background: var(--red-main);
+  border-color: var(--red-main);
+  color: var(--gold-light);
 }
 
 /* ===========================
@@ -428,7 +458,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .menu-card {
   background: var(--white);
-  border: 1.5px solid var(--green-pale);
+  border: 1.5px solid var(--red-pale);
   border-radius: var(--radius-md);
   overflow: hidden;
   display: flex;
@@ -438,13 +468,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .menu-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-3px);
+  border-color: var(--border-gold);
 }
 
 .menu-card-img {
   width: 100px;
   min-width: 100px;
   flex-shrink: 0;
-  background: var(--green-bg);
+  background: var(--red-bg);
   overflow: hidden;
   align-self: stretch;
 }
@@ -479,7 +510,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .price {
   font-weight: 700;
   font-size: 1rem;
-  color: var(--green-main);
+  color: var(--gold);
   white-space: nowrap;
 }
 
@@ -492,15 +523,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .tag {
   display: inline-block;
-  background: var(--green-pale);
-  color: var(--green-dark);
+  background: var(--gold-pale);
+  color: var(--red-dark);
   font-size: .72rem;
   font-weight: 600;
   padding: 3px 10px;
   border-radius: var(--radius-full);
 }
-.tag--new  { background: #fff3cd; color: #7d5a00; }
-.tag--gold { background: var(--gold-light); color: #7a5c00; }
+.tag--new  { background: var(--gold-pale); color: var(--gold-dark); }
+.tag--gold { background: var(--gold-light); color: var(--red-dark); }
 
 /* ===========================
    ABOUT
@@ -545,11 +576,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 12px 18px;
   text-align: center;
   box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-gold);
 }
 .about-badge-float strong {
   display: block;
   font-size: 1.3rem;
-  color: var(--green-dark);
+  color: var(--red-dark);
   font-family: var(--font-serif);
 }
 .about-badge-float small {
@@ -576,7 +608,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .feature-card {
   background: var(--white);
-  border: 1.5px solid var(--green-pale);
+  border: 1.5px solid var(--red-pale);
   border-radius: var(--radius-md);
   padding: 24px 20px;
   transition: box-shadow var(--transition), transform var(--transition);
@@ -584,6 +616,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .feature-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-3px);
+  border-color: var(--border-gold);
 }
 
 .feature-icon {
@@ -594,7 +627,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .feature-card h3 {
   font-family: var(--font-serif);
   font-size: 1rem;
-  color: var(--green-dark);
+  color: var(--red-dark);
   margin-bottom: 8px;
 }
 
@@ -615,12 +648,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .review-card {
   background: var(--white);
-  border: 1.5px solid var(--green-pale);
+  border: 1.5px solid var(--red-pale);
   border-radius: var(--radius-md);
   padding: 24px;
   transition: box-shadow var(--transition);
 }
-.review-card:hover { box-shadow: var(--shadow-md); }
+.review-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-gold);
+}
 
 .stars {
   color: var(--gold);
@@ -646,8 +682,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .reviewer-avatar {
   width: 40px; height: 40px;
   border-radius: 50%;
-  background: var(--green-main);
-  color: var(--white);
+  background: var(--red-dark);
+  color: var(--gold-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -690,13 +726,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .contact-info .btn-primary { margin-top: 8px; }
 .contact-email { color: inherit; text-decoration: none; }
-.contact-email:hover { text-decoration: underline; color: var(--green-main); }
+.contact-email:hover { text-decoration: underline; color: var(--red-main); }
 
 .map-placeholder {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--green-bg);
-  border: 2px solid var(--green-pale);
+  background: var(--red-bg);
+  border: 2px solid var(--red-pale);
   min-height: 280px;
   min-width: 0;
   width: 100%;
@@ -731,8 +767,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   right: 12px;
   padding: 8px 14px;
   background: var(--white);
-  color: var(--green-main);
-  border: 1px solid var(--green-pale);
+  color: var(--red-main);
+  border: 1px solid var(--red-pale);
   border-radius: var(--radius-full);
   font-size: .85rem;
   font-weight: 600;
@@ -741,7 +777,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: background var(--transition), color var(--transition);
 }
 .map-link:hover {
-  background: var(--green-main);
+  background: var(--red-main);
   color: var(--white);
 }
 
@@ -749,7 +785,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    FOOTER
 =========================== */
 .footer {
-  background: var(--green-dark);
+  background: var(--red-dark);
   color: var(--white);
   padding: 56px 0 max(20px, env(safe-area-inset-bottom));
 }
@@ -776,7 +812,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: .75rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--green-light);
+  color: var(--gold);
   margin-bottom: 14px;
 }
 .footer-links {
@@ -789,7 +825,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: rgba(255,255,255,.7);
   transition: color var(--transition);
 }
-.footer-links a:hover { color: var(--white); }
+.footer-links a:hover { color: var(--gold-light); }
 
 .social-links {
   display: flex;
@@ -809,13 +845,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: fit-content;
 }
 .social-btn:hover {
-  background: var(--green-mid);
-  border-color: var(--green-mid);
-  color: var(--white);
+  background: rgba(201,162,39,.25);
+  border-color: var(--gold);
+  color: var(--gold-light);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.10);
+  border-top: 1px solid var(--border-gold);
   padding: 18px max(20px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
   text-align: center;
 }
@@ -880,7 +916,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     font-size: .9rem;
     border-radius: var(--radius-full);
   }
-  .nav-menu a:hover { background: var(--green-bg); color: var(--green-main); }
+  .nav-menu a:hover { background: var(--red-bg); color: var(--red-main); }
   .btn-nav {
     margin-top: 0;
     padding: 10px 22px !important;
