@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Piadineria — Gusto Autentico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">La Piadineria</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-menu" id="navMenu">
+      <a href="#menu">Menu</a>
+      <a href="#chi-siamo">Chi Siamo</a>
+      <a href="#ingredienti">Ingredienti</a>
+      <a href="#contatti">Contatti</a>
+      <a href="#contatti" class="btn-nav">Ordina ora</a>
+    </nav>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Fatto a mano ogni giorno</p>
+      <h1 class="hero-title">La piadina<br/><em>vera</em>.</h1>
+      <p class="hero-sub">Ingredienti freschi, impasto tradizionale romagnolo,<br/>cotta sul momento — solo per te.</p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn-primary">Scopri il menu</a>
+        <a href="#chi-siamo" class="btn-ghost">La nostra storia</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>↓</span>
+    </div>
+  </section>
+
+  <!-- ====== BADGE BAR (testi in scroll continuo) ====== -->
+  <div class="badge-bar">
+    <div class="badge-track">
+      <span class="badge">Farina selezionata</span>
+      <span class="badge">Latticini freschi</span>
+      <span class="badge">Verdure di stagione</span>
+      <span class="badge">Fatto con amore</span>
+      <span class="badge">Farina selezionata</span>
+      <span class="badge">Latticini freschi</span>
+      <span class="badge">Verdure di stagione</span>
+      <span class="badge">Fatto con amore</span>
+    </div>
+  </div>
+
+  <!-- ====== MENU ====== -->
+  <section class="section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Il nostro menu</p>
+        <h2 class="section-title">Scegli la tua piadina</h2>
+        <p class="section-sub">Classiche, vegetariane, gourmet — tutte cotte al momento.</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" data-tab="classiche">Classiche</button>
+        <button class="tab" data-tab="veg">Vegetariane</button>
+        <button class="tab" data-tab="gourmet">Gourmet</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="classiche">
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="images/menu/piadina-semplice.png" alt="Squacquerone e Rucola" />
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Squacquerone &amp; Rucola</h3>
+              <span class="price">€5,50</span>
+            </div>
+            <p>Squacquerone fresco, rucola selezionata, pomodorini.</p>
+            <span class="tag">Best seller</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="images/menu/piadina-prosciutto.png" alt="Prosciutto e Stracchino" />
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Prosciutto &amp; Stracchino</h3>
+              <span class="price">€6,00</span>
+            </div>
+            <p>Prosciutto crudo DOP, stracchino cremoso, pomodoro.</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="images/menu/piadina-mortadella.png" alt="Mortadella e Pistacchio" />
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Mortadella &amp; Pistacchio</h3>
+              <span class="price">€6,50</span>
+            </div>
+            <p>Mortadella IGP, crema di pistacchio, rucola fresca.</p>
+            <span class="tag tag--new">Novità</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="images/menu/piadina-pollo.png" alt="Pollo e Verdure" />
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Pollo &amp; Verdure</h3>
+              <span class="price">€6,50</span>
+            </div>
+            <p>Straccetti di pollo, peperoni arrosto, maionese leggera.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-grid hidden" id="veg">
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="images/menu/piadina-avocado.png" alt="Avocado e Feta" />
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Avocado &amp; Feta</h3>
+              <span class="price">€6,50</span>
+            </div>
+            <p>Avocado fresco, feta greca, pomodorini, rucola.</p>
+            <span class="tag">Vegetariana</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="images/menu/piadina-funghi.png" alt="Funghi e Grana" />
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Funghi &amp; Grana</h3>
+              <span class="price">€5,50</span>
+            </div>
+            <p>Funghi trifolati, scaglie di grana, rucola, olio EVO.</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="images/menu/piadina-pollo.png" alt="Verdure di Stagione" />
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Verdure di Stagione</h3>
+              <span class="price">€5,00</span>
+            </div>
+            <p>Mix di verdure grigliate, hummus, insalata mista.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-grid hidden" id="gourmet">
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="images/menu/piadina-semplice.png" alt="Salmone e Robiola" />
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Salmone &amp; Robiola</h3>
+              <span class="price">€8,50</span>
+            </div>
+            <p>Salmone affumicato, robiola alle erbe, capperi, rucola.</p>
+            <span class="tag tag--gold">Gourmet</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="images/menu/piadina-prosciutto.png" alt="Bresaola e Grana" />
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Bresaola &amp; Grana</h3>
+              <span class="price">€7,50</span>
+            </div>
+            <p>Bresaola della Valtellina, grana, rucola, limone, olio.</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="images/menu/piadina-funghi.png" alt="Tartufo e Scamorza" />
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Tartufo &amp; Scamorza</h3>
+              <span class="price">€9,00</span>
+            </div>
+            <p>Crema di tartufo, scamorza affumicata, rucola, pomodorini.</p>
+            <span class="tag tag--gold">Chef's choice</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CHI SIAMO ====== -->
+  <section class="section section--green" id="chi-siamo">
+    <div class="container about-grid">
+      <div class="about-visual">
+        <div class="about-img-wrap">
+          <div class="about-img-placeholder">
+            <img src="images/piadine.png" alt="Piadine con prosciutto, rucola e formaggio" class="about-img" />
+          </div>
+          <div class="about-badge-float">
+            <strong>Dal 1998</strong>
+            <small>Tradizione romagnola</small>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-eyebrow light">Chi siamo</p>
+        <h2 class="section-title light">Una storia di<br/>impasto e passione.</h2>
+        <p>Siamo nati in una piccola bottega di Rimini, con una teglia e tanta voglia di fare le cose bene. Oggi siamo nel cuore della tua città, ma la ricetta è rimasta la stessa.</p>
+        <p>L'impasto lo prepariamo ogni mattina con farina di tipo 0, strutto (o olio EVO per la versione light), acqua e un pizzico di sale. Niente più, niente meno.</p>
+        <a href="#contatti" class="btn-white">Vieni a trovarci</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== INGREDIENTI ====== -->
+  <section class="section" id="ingredienti">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Qualità prima di tutto</p>
+        <h2 class="section-title">Cosa c'è dentro</h2>
+        <p class="section-sub">Tracciabilità al 100%. Sappiamo da dove vengono tutti i nostri ingredienti.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌾</div>
+          <h3>Farina Macinata a Pietra</h3>
+          <p>Dal mulino Morini di Castel Bolognese — macinata lenta, sapore autentico.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🐄</div>
+          <h3>Latticini a km 0</h3>
+          <p>Squacquerone, stracchino e robiola da caseifici a meno di 50 km.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🥬</div>
+          <h3>Verdure di Stagione</h3>
+          <p>Solo ciò che è di stagione, dal mercato locale, ogni settimana.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🫒</div>
+          <h3>Olio EVO Biologico</h3>
+          <p>Olio extravergine biologico da olive italiane, prima spremitura a freddo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="section section--light" id="recensioni">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Cosa dicono di noi</p>
+        <h2 class="section-title">I clienti parlano</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"La migliore piadina che abbia mai mangiato fuori dalla Romagna. Impasto perfetto, ingredienti freschi."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">M</div>
+            <div>
+              <strong>Marco R.</strong>
+              <small>Bologna</small>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Finalmente una piadina vera! Veloce, buona, a prezzi onesti. La mia pausa pranzo è cambiata."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">S</div>
+            <div>
+              <strong>Sara F.</strong>
+              <small>Milano</small>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Quella con il tartufo e scamorza è una vera esperienza. Ci torno ogni settimana!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">L</div>
+            <div>
+              <strong>Luca P.</strong>
+              <small>Roma</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTATTI ====== -->
+  <section class="section" id="contatti">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <p class="section-eyebrow">Dove siamo</p>
+        <h2 class="section-title">Vieni a trovarci</h2>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <strong>Via della Romagna, 12</strong>
+            <small>Milano (MI) — 20100</small>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🕐</span>
+          <div>
+            <strong>Lun–Sab: 11:30 – 21:00</strong>
+            <small>Dom: 12:00 – 20:00</small>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div>
+            <strong>+39 02 1234567</strong>
+            <small>Prenota o ordina per asporto</small>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <div>
+            <strong>@lapiadineria</strong>
+            <small>Seguici su Instagram</small>
+          </div>
+        </div>
+        <a href="tel:+390212345678" class="btn-primary">Chiama ora</a>
+      </div>
+      <div class="map-placeholder">
+        <iframe
+          class="map-iframe"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=9.182%2C45.461%2C9.198%2C45.468&layer=mapnik&marker=45.4645%2C9.19"
+          title="Mappa - La Piadineria, Via della Romagna 12 Milano"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <a href="https://www.google.com/maps/search/?api=1&query=Via+della+Romagna+12+Milano" target="_blank" rel="noopener" class="map-link">Apri in Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">La Piadineria</span>
+        <p>Autentica piadina romagnola,<br/>cotta con amore ogni giorno.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Menu</h4>
+        <a href="#menu">Piadine Classiche</a>
+        <a href="#menu">Vegetariane</a>
+        <a href="#menu">Gourmet</a>
+      </div>
+      <div class="footer-links">
+        <h4>Info</h4>
+        <a href="#chi-siamo">Chi Siamo</a>
+        <a href="#ingredienti">Ingredienti</a>
+        <a href="#contatti">Contatti</a>
+      </div>
+      <div class="footer-social">
+        <h4>Seguici</h4>
+        <div class="social-links">
+          <a href="#" class="social-btn">Instagram</a>
+          <a href="#" class="social-btn">Facebook</a>
+          <a href="#" class="social-btn">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 La Piadineria — P.IVA 01234567890 — <a href="#">Privacy Policy</a> — <a href="#">Cookie Policy</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
